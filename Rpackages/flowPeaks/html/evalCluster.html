@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: evaulate the result of a clustering algorihm by comparing it...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for evalCluster {flowPeaks}"><tr><td>evalCluster {flowPeaks}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>evaulate the result of a clustering algorihm
+by comparing it with the gold
+standard</h2>
+
+<h3>Description</h3>
+
+
+<p>This function takes the cluster labels of the two clusterings, one is
+based on the gold standard, the other is a candidate clusterign, and
+compute one of the three metrics to assess the candidate clustering performance.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+evalCluster(gs,cand,method=c("Rand.index","Fmeasure","Vmeasure"),
+                      rm.gs.outliers=TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+
+<table summary="R argblock">
+<tr valign="top"><td><code>gs</code></td>
+<td>
+<p>A integer-valued vector of length n for the cluster labels of
+the gold standard clustering, where negative numbers
+such as -1 is for the outerliers</p>
+</td></tr>
+<tr valign="top"><td><code>cand</code></td>
+<td>
+<p>A integer-valued vector of length n for the cluster label of
+a candidate clustering, where -1 is for the outliers</p>
+</td></tr>
+<tr valign="top"><td><code>rm.gs.outliers</code></td>
+<td>
+<p>Determining whether the outliers of the gold
+standard clustering should be removed in the comparison</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>A single character to indicate which one of three metrics
+should be used to evaluate the clustering. The details are described in
+Ge (2012) and references mentioned in that paper<br>
+</p>
+
+<dl>
+<dt>Rand.index</dt><dd><p>The adjusted Rand.index</p>
+</dd>
+<dt>Fmeasure</dt><dd><p>F-measure</p>
+</dd>
+<dt>Vmeasure</dt><dd><p>V-measure</p>
+</dd>
+</dl>
+
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+
+<p>Yongchao Ge <a href="mailto:yongchao.ge@gmail.com">yongchao.ge@gmail.com</a>
+</p>
+
+
+<h3>References</h3>
+
+
+<p>Ge Y. et al, flowPeaks: a fast unsupervised clustering for flow
+cytometry data via K-means and density peak finding, 2012, Bioinformatics, in press. 
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="flowPeaks.html">flowPeaks</a></code></p>
+
+<hr><div align="center">[Package <em>flowPeaks</em> version 0.99.6 <a href="00Index.html">Index</a>]</div>
+</body></html>

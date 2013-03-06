@@ -1,0 +1,1409 @@
+html { 
+    height:100.1%; 
+}
+
+body { 
+    font-family: Arial; 
+    font-size: 12px; 
+    height:100.1%; 
+}
+
+#wrapper { 
+    margin: 0px auto; 
+    width: 960px; 
+}
+
+#container { 
+    width: 960px; 
+    float: left; 
+}
+
+#dropmenudiv { 
+    position: absolute; 
+    border: 1px solid white; 
+    border-bottom-width: 0; 
+    font-family: Arial; 
+    font-size: 12px; 
+    background-color: #29166F; 
+    line-height: 20px; 
+    z-index: 100; 
+}
+
+#dropmenudiv a { 
+    width: 100%; 
+    display: block; 
+    text-indent: 5px; 
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    padding: 1px 0; 
+    text-decoration: none; 
+    color: white;
+}
+
+#dropmenudiv a:hover{ 
+    background-color: #29166F; 
+    font-weight: bold;  
+    color: white; 
+    text-decoration: underline;   
+}
+
+.title { 
+    font-family: Arial; 
+    font-size: 17px; 
+    color: #29166F; 
+    font-weight: bold; 
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.subtitle_green {  
+    color: #428040; //#29166F; 
+    font-weight: bold; 
+    font-family: Arial; 
+    font-size: 14px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.subtitle_blue { 
+    color: #428040; 
+    font-weight: bold; 
+    font-family: Arial; 
+    font-size: 14px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.subtitle_gray { 
+    color: #535353; 
+    font-weight: bold; 
+    font-family: Arial; 
+    font-size: 14px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.text_green {
+    color: #29166F;
+}
+
+.text_blue {
+    color: #29166F; 
+}
+
+.text_gray {
+    color: #29166F; 
+}
+
+.text_red {
+    color: red;
+}
+
+/* Buttons */
+.next {
+    float: right;
+    height: 20px;
+    width: 60px;
+    border: 0;
+    background-image: url(../imgs/next.png); 
+}
+
+.next:hover {
+    float: right;
+    height: 20px;
+    width: 60px;
+    border: 0;
+    background-image: url(../imgs/next_hover.png); 
+}
+
+.evaluate {
+    float: right;
+    height: 20px;
+    width: 95px;
+    border: 0;
+    background-image: url(../imgs/evaluate.png); 
+}
+
+.evaluate:hover {
+    float: right;
+    height: 20px;
+    width: 95px;
+    border: 0;
+    background-image: url(../imgs/evaluate_hover.png); 
+}
+
+.back {
+    float: right;
+    height: 20px;
+    width: 60px;
+    border: 0;
+    background-image: url(../imgs/back.png); 
+}
+
+.back:hover {
+    float: right;
+    height: 20px;
+    width: 60px;
+    border: 0;
+    background-image: url(../imgs/back_hover.png); 
+}
+
+.search {
+    float: right;
+    height: 20px;
+    width: 86px;
+    border: 0;
+    background-image: url(../imgs/search.png); 
+}
+
+.search:hover {
+    float: right;
+    height: 20px;
+    width: 86px;
+    border: 0;
+    background-image: url(../imgs/search_hover.png); 
+}
+
+.reset {
+    float: right;
+    height: 20px;
+    width: 80px;
+    border: 0;
+    background-image: url(../imgs/reset.png); 
+}
+
+.reset:hover {
+    float: right;
+    height: 20px;
+    width: 80px;
+    border: 0;
+    background-image: url(../imgs/reset_hover.png); 
+}
+
+.edit {
+    float: right;
+    height: 20px;
+    width: 60px;
+    border: 0;
+    background-image: url(../imgs/edit.png); 
+}
+
+.edit:hover {
+    float: right;
+    height: 20px;
+    width: 60px;
+    border: 0;
+    background-image: url(../imgs/edit_hover.png); 
+}
+
+.add_organism {
+    float: right;
+    height: 20px;
+    width: 210px;
+    border: 0;
+    background-image: url(../imgs/add_organism.png); 
+}
+
+.add_organism:hover {
+    float: right;
+    height: 20px;
+    width: 210px;
+    border: 0;
+    background-image: url(../imgs/add_organism_hover.png); 
+}
+
+.ncbi_blast {
+    float: right;
+    height: 20px;
+    width: 120px;
+    border: 0;
+    background-image: url(../imgs/ncbi_blast.png); 
+}
+
+.ncbi_blast:hover {
+    float: right;
+    height: 20px;
+    width: 120px;
+    border: 0;
+    background-image: url(../imgs/ncbi_blast_hover.png); 
+}
+
+.ucsc_pcr {
+    float: right;
+    height: 20px;
+    width: 105px;
+    border: 0;
+    background-image: url(../imgs/ucsc_pcr.png); 
+}
+
+.ucsc_pcr:hover {
+    float: right;
+    height: 20px;
+    width: 105px;
+    border: 0;
+    background-image: url(../imgs/ucsc_pcr_hover.png); 
+}
+
+/* Auto_suggest */
+#ajax_listOfOptions {
+    position: absolute;	/* Never change this one */
+    width: 400px;	/* Width of box */
+    max-height: 200px;	/* Height of box */
+    overflow: auto;	/* Scrolling features */
+    border: 1px solid #747474;	/* Dark green border */
+    background-color: #FFFFFF;	/* White background color */
+    text-align: left;
+    font-size: 12px;
+    z-index: 100;
+}
+
+#ajax_listOfOptions div{	/* General rule for both .optionDiv and .optionDivSelected */
+    margin: 1px;		
+    padding: 1px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#ajax_listOfOptions .optionDiv{	/* Div for each item in list */
+}
+
+#ajax_listOfOptions .optionDivSelected{ /* Selected item in the list */
+    background-color: #747474;
+    color: #FFFFFF;
+}
+
+#ajax_listOfOptions_iframe{
+    background-color: #F00;
+    position: absolute;
+    z-index: 5;
+}
+
+/* Popups */
+.clDescriptionCont {
+    position: absolute;  
+    width: 300px;
+    visibility: hidden; 
+    layer-background-color: #cccccc; 
+    z-index: 300;
+}
+.clDescription {
+    width: 300px; 
+    left: 0px; 
+    top: 0px; 
+    font-family: verdana,arial,helvetica,sans-serif; 
+    overflow: hidden; 
+    border: 1px solid #999999; 
+    padding: 3px; 
+    font-size: 11px; 
+    background-color: #eeeeee; 
+    layer-background-color: #eeeeee;
+}
+
+.clLinks {
+    position: absolute; 
+    left: 100px; 
+    top: 300px; 
+    z-index: 1;
+}
+
+.clCaption {
+    position: absolute; 
+    left: 0px; 
+    top: 0px; 
+    width: 300px; 
+    height: 15px; 
+    clip: rect(0px 300px 15px 0px); 
+    font-size: 11px; 
+    font-family: verdana,arial,helvetica,sans-serif; 
+    background-color: #dddddd; 
+    layer-background-color: #dddddd;
+}
+
+/* Blue quicksearch */
+#quicksearch_top { 
+    float: left; 
+    height: 20px; 
+    width: 670px; 
+    background-image: url(../imgs/quicksearch_top.png); 
+}
+
+#quicksearch_middle { 
+    float: left; 
+    height: 40px; 
+    width: 670px; 
+    background-image: url(../imgs/quicksearch_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#quicksearch_bottom { 
+    float: left; 
+    height: 20px; 
+    width: 670px; 
+    background-image: url(../imgs/quicksearch_bottom.png); 
+}
+
+#quicksearch_top_no_tabs { 
+    float: left; 
+    height: 20px; 
+    width: 700px; 
+    background-image: url(../imgs/quicksearch_top_no_tabs.png); 
+}
+
+#quicksearch_middle_no_tabs { 
+    float: left; 
+    height: 40px; 
+    width: 700px; 
+    background-image: url(../imgs/quicksearch_middle_no_tabs.png); 
+    background-repeat: repeat-y; 
+}
+
+#quicksearch_bottom_no_tabs { 
+    float: left; 
+    height: 20px; 
+    width: 700px; 
+    background-image: url(../imgs/quicksearch_bottom_no_tabs.png); 
+}
+
+#quicksearch_wide_top { 
+    float: left; 
+    height: 20px; 
+    width: 800px; 
+    background-image: url(../imgs/quicksearch_wide_top.png); 
+}
+
+#quicksearch_wide_middle { 
+    float: left; 
+    height: 40px; 
+    width: 800px; 
+    background-image: url(../imgs/quicksearch_wide_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#quicksearch_wide_bottom { 
+    float: left; 
+    height: 20px; 
+    width: 800px; 
+    background-image: url(../imgs/quicksearch_wide_bottom.png); 
+}
+
+/* General header settings */
+#header { 
+    float: left; 
+    height: 90px; 
+    width: 993px; 
+}
+
+/* Green header */
+#header_top_green { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_green_top.png); 
+}
+
+#header_middle_green { 
+    float: left; 
+    height: 50px; 
+    width: 960px; 
+    background-image: url(../imgs/header_green_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#header_bottom_green { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_green_bottom.png); 
+}
+
+#header_top_green_no_search { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_green_top_no_search.png); 
+}
+
+#header_middle_green_no_search { 
+    float: left; 
+    height: 50px; 
+    width: 960px; 
+    background-image: url(../imgs/header_green_middle_no_search.png); 
+    background-repeat: repeat-y; 
+}
+
+#header_bottom_green_no_search { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_green_bottom_no_search.png); 
+}
+
+#header_logo_green {
+    float: left;
+    height: 50px;
+    width: 100px;
+    margin-left: 20px;
+    background-image: url(../imgs/logo_green.png);
+}
+
+#header_dna_strain_green {
+    float: right;
+    margin-right: 15px;
+    height: 50px;
+    width: 120px;
+    background-image: url(../imgs/dna_green_middle.png);
+}
+
+/* Blue header */
+#header_top_blue { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_blue_top.png); 
+}
+
+#header_middle_blue { 
+    float: left; 
+    height: 50px; 
+    width: 960px; 
+    background-image: url(../imgs/header_blue_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#header_bottom_blue { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_blue_bottom.png); 
+}
+
+#header_logo_blue {
+    float: left;
+    height: 50px;
+    width: 100px;
+    margin-left: 20px;
+    background-image: url(../imgs/logo_blue.png);
+}
+
+#header_dna_strain_blue {
+    float: right;
+    margin-right: 15px;
+    height: 50px;
+    width: 120px;
+    background-image: url(../imgs/dna_blue_middle.png);
+}
+
+/* Gray header */
+#header_top_gray { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_gray_top.png); 
+}
+
+#header_middle_gray { 
+    float: left; 
+    height: 50px; 
+    width: 960px; 
+    background-image: url(../imgs/header_gray_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#header_bottom_gray { 
+    float: left; 
+    height: 20px; 
+    width: 960px; 
+    background-image: url(../imgs/header_gray_bottom.png); 
+}
+
+#header_logo_gray {
+    float: left;
+    margin-left: 20px;
+    height: 50px;
+    width: 100px;
+    background-image: url(../imgs/logo_gray.png);
+}
+
+#header_dna_strain_gray {
+    float: right;
+    margin-right: 15px;
+    height: 50px;
+    width: 120px;
+    background-image: url(../imgs/dna_gray_middle.png);
+}
+
+/* General top-menu settings */
+#top_menu { 
+    float: left; 
+    height: 23px; 
+    width: 960px; 
+    margin-top: 2px; 
+    margin-bottom: 2px; }
+
+/* Blue top-menu */
+#top_menu_left_blue { 
+    float: left; 
+    height: 23px; 
+    width: 15px; 
+    background-image: url(../imgs/top_menu_left_blue.png); 
+}
+
+#top_menu_center_blue { 
+    float: left; 
+    height: 23px; 
+    width: 930px; 
+    background-color: #29166F; /* blue */
+    color: white 
+}
+
+#top_menu_right_blue { 
+    float: left; 
+    height: 23px; width: 15px; 
+    background-image: url(../imgs/top_menu_right_blue.png); 
+}
+
+.top_menu_text_blue { 
+    float: left; 
+    height: 23px; 
+    margin-top: 3px; 
+    margin-left: 7px; 
+    margin-right: 7px; 
+    font-weight: bold;
+    color: white; 
+    text-decoration: none; 
+    cursor: hand; 
+}
+
+.top_menu_text_blue:hover { 
+    float: left; 
+    height: 23px; 
+    margin-top: 3px; 
+    margin-left: 7px; 
+    margin-right: 7px; 
+    font-weight: bold;
+    color: white; 
+    text-decoration: underline; 
+    cursor: hand; 
+}
+
+.top_menu_divider_blue { 
+    float: left; 
+    margin-top: 1px; 
+    width: 5px; 
+    height: 21px; 
+    background-image: url(../imgs/top_menu_divider_blue.png);
+}
+
+#login_blue {
+    float: left;
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../imgs/logged_out_blue.png);
+    border: 0;
+}
+
+#logout_blue {
+    float: left;
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../imgs/logged_in_blue.png);
+    border: 0;
+}
+
+/* Green top-menu */
+#top_menu_left_green { 
+    float: left; 
+    height: 23px; 
+    width: 15px; 
+    background-image: url(../imgs/top_menu_left_green.png); 
+}
+
+#top_menu_center_green { 
+    float: left; 
+    height: 23px; 
+    width: 930px; 
+    background-color: #9ACA99; /* green */
+    color: white 
+}
+
+#top_menu_right_green { 
+    float: left; 
+    height: 23px; width: 15px; 
+    background-image: url(../imgs/top_menu_right_green.png); 
+}
+
+.top_menu_text_green { 
+    float: left; 
+    height: 23px; 
+    margin-top: 3px; 
+    margin-left: 7px; 
+    margin-right: 7px; 
+    font-weight: bold;
+    color: white; /* #29166F; blue */
+    text-decoration: none; 
+    cursor: hand; 
+}
+
+.top_menu_text_green:hover { 
+    float: left; 
+    height: 23px; 
+    margin-top: 3px; 
+    margin-left: 7px; 
+    margin-right: 7px; 
+    font-weight: bold;
+    color: white; /* #29166F; blue */
+    text-decoration: underline; 
+    cursor: hand; 
+}
+
+.top_menu_divider_green { 
+    float: left; 
+    margin-top: 1px; 
+    width: 5px; 
+    height: 21px; 
+    background-image: url(../imgs/top_menu_divider_green.png);
+}
+
+#login_green {
+    float: left;
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../imgs/logged_out_green.png);
+    border: 0;
+}
+
+#logout_green {
+    float: left;
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../imgs/logged_in_green.png);
+    border: 0;
+}
+
+/* Content settings */
+
+#content { 
+    float: left; 
+    width: 960px; 
+}
+
+#content_gradient_no_tabs { 
+    float: left; 
+    width: 960px; 
+    height: 10px; 
+    /*  background-image: url(../imgs/content_gradient_no_tabs.png); */
+}
+
+#content_gradient_tabs { 
+    float: left; 
+    width: 960px; 
+    height: 10px; 
+    background-image: url(../imgs/content_gradient_tabs.png); 
+}
+
+#content_center { 
+    float: left; 
+    width: 960px; 
+    min_height: 450px; 
+    /*  background-image: url(../imgs/content_middle.png); */
+    background-repeat: repeat-y; 
+}
+
+#content_center_green { 
+    float: left; 
+    width: 960px; 
+    min_height: 450px; 
+    background-image: url(../imgs/content_green_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#content_center_gray { 
+    float: left; 
+    width: 960px; 
+    min_height: 450px; 
+    background-image: url(../imgs/content_gray_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#content_center_blue { 
+    float: left; 
+    width: 960px; 
+    min_height: 450px; 
+    background-image: url(../imgs/content_blue_middle.png); 
+    background-repeat: repeat-y; 
+}
+
+#content_bottom { 
+    float: left; 
+    width: 960px; 
+    height: 15px; 
+    /*  background-image: url(../imgs/content_bottom.png); */
+}
+
+#content_bottom_green { 
+    float: left; 
+    width: 960px; 
+    height: 15px; 
+    background-image: url(../imgs/content_green_bottom.png); 
+}
+
+#content_bottom_gray { 
+    float: left; 
+    width: 960px; 
+    height: 15px; 
+    background-image: url(../imgs/content_gray_bottom.png); 
+}
+
+#content_bottom_blue { 
+    float: left; 
+    width: 960px; 
+    height: 15px; 
+    background-image: url(../imgs/content_blue_bottom.png); 
+}
+
+/* General quick menu settings */
+#quick_menu { 
+    width: 150px; 
+    min-height: 240px; 
+    margin-left: 15px; 
+    float: left; 
+}
+
+#quick_menu a { 
+    text-decoration: none; 
+}
+
+/* Blue quick menu */
+#quick_menu_top_blue { 
+    width: 150px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_top_blue.png); 
+}
+
+#quick_menu_center_blue { 
+    width: 150px; 
+    min-height: 200px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_center_blue.png); 
+    background-repeat: repeat-y; 
+}	 
+
+#quick_menu_bottom_blue { 
+    width: 150px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_bottom_blue.png); 
+}	
+
+.quick_link_big_blue { 
+    color: #29166F; 
+    font-weight: bold; 
+    margin-left: 15px; 
+    font-family: Arial; 
+    font-size: 12px; 
+}
+
+.quick_link_small_blue { 
+    color: #29166F; 
+    font-weight: bold; 
+    margin-left: 30px; 
+    font-family: Arial; 
+    font-size: 11px; 
+}	  
+
+.quick_link_big_clicked_blue { 
+    color: #428040; 
+    font-weight: bold; 
+    margin-left: 15px; 
+    font-family: Arial; 
+    font-size: 12px; 
+}
+
+.quick_link_small_clicked_blue { 
+    color: #428040; 
+    font-weight: bold; 
+    margin-left: 30px; 
+    font-family: Arial; 
+    font-size: 11px; 
+}
+
+/* Green quick menu */
+#quick_menu_top_green { 
+    width: 150px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_top_green.png); 
+}
+
+#quick_menu_center_green { 
+    width: 150px; 
+    min-height: 200px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_center_green.png); 
+    background-repeat: repeat-y; 
+}	 
+
+#quick_menu_bottom_green { 
+    width: 150px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_bottom_green.png); 
+}	
+
+.quick_link_big_green { 
+    color: #29166F; 
+    font-weight: bold; 
+    margin-left: 15px; 
+    font-family: Arial; 
+    font-size: 12px; 
+}
+
+.quick_link_small_green { 
+    color: #29166F; 
+    font-weight: bold; 
+    margin-left: 30px; 
+    font-family: Arial; 
+    font-size: 11px; 
+}	  
+
+.quick_link_big_clicked_green { 
+    color: #428040; 
+    font-weight: bold; 
+    margin-left: 15px; 
+    font-family: Arial; 
+    font-size: 12px; 
+}
+
+.quick_link_small_clicked_green { 
+    color: #428040; 
+    font-weight: bold; 
+    margin-left: 30px; 
+    font-family: Arial; 
+    font-size: 11px; 
+}
+
+/* Gray quick menu */
+#quick_menu_top_gray { 
+    width: 150px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_top_gray.png); 
+}
+
+#quick_menu_center_gray { 
+    width: 150px; 
+    min-height: 200px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_center_gray.png); 
+    background-repeat: repeat-y; 
+}	 
+
+#quick_menu_bottom_gray { 
+    width: 150px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/quick_menu_bottom_gray.png); 
+}	
+
+.quick_link_big_gray { 
+    color: #999999; 
+    font-weight: bold; 
+    margin-left: 15px; 
+    font-family: Arial; 
+    font-size: 12px; 
+}
+
+.quick_link_small_gray { 
+    color: #999999; 
+    font-weight: bold; 
+    margin-left: 30px; 
+    font-family: Arial; 
+    font-size: 11px; 
+}	  
+
+.quick_link_big_clicked_gray { 
+    color: #29166F; 
+    font-weight: bold; 
+    margin-left: 15px; 
+    font-family: Arial; 
+    font-size: 12px; 
+}
+
+.quick_link_small_clicked_gray { 
+    color: #29166F; 
+    font-weight: bold; 
+    margin-left: 30px; 
+    font-family: Arial; 
+    font-size: 11px; 
+}
+
+/* General gene info settings */
+.gene_info_link {
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: Arial;
+    padding: 0px 1px;
+}
+
+.gene_info_sublink {
+    margin-left: 45px;
+    margin-top: 0px;
+    font-size: 11px;
+    font-family: Arial;
+    padding: 0px 1px;
+}
+
+/* Blue gene info */
+.gene_info_blue { 
+    width: 250px; 
+    min-height: 80px; 
+    margin-left: 15px; 
+    float: left;
+    color: #29166F; //#428040;  
+}
+
+.gene_info_external_link_blue { 
+    color : #428040;
+}
+
+.gene_info_blue a { 
+    text-decoration: none; 
+}
+
+.gene_info_top_blue { 
+    width: 250px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_top_blue.png); 
+}
+
+.gene_info_center_blue { 
+    width: 250px; 
+    min-height: 40px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_center_blue.png); 
+    background-repeat: repeat-y; 
+}	 
+
+.gene_info_bottom_blue { 
+    width: 250px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_bottom_blue.png); 
+}	
+
+.gene_info_divider_blue {
+    width: 250px;
+    height: 20px;
+    background-image: url(../imgs/gene_info_divider_blue.png);
+}
+
+.gene_info_link_blue {
+    color: #29166F;
+}
+
+.gene_info_sublink_blue {
+    color: #29166F;
+}
+
+.gene_info_link_clicked_blue {
+    color: #428040;
+}
+
+.gene_info_sublink_clicked_blue {
+    color: #428040;
+}
+
+/* Green gene info */
+.gene_info_green { 
+    width: 250px; 
+    min-height: 80px; 
+    margin-left: 15px; 
+    float: left;
+    color: #29166F;  
+}
+
+.gene_info_external_link_green { 
+    color : #428040;
+}
+
+.gene_info_green a { 
+    text-decoration: none; 
+}
+
+.gene_info_top_green { 
+    width: 250px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_top_green.png); 
+}
+
+.gene_info_center_green { 
+    width: 250px; 
+    min-height: 40px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_center_green.png); 
+    background-repeat: repeat-y; 
+}	 
+
+.gene_info_bottom_green { 
+    width: 250px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_bottom_green.png); 
+}	
+
+.gene_info_divider_green {
+    width: 250px;
+    height: 20px;
+    background-image: url(../imgs/gene_info_divider_green.png);
+}
+
+.gene_info_link_green {
+    color: #29166F;
+}
+
+.gene_info_sublink_green {
+    color: #29166F;
+}
+
+.gene_info_link_clicked_green {
+    color: #428040;
+}
+
+.gene_info_sublink_clicked_green {
+    color: #428040;
+}
+
+/* Gray gene info */
+.gene_info_gray { 
+    width: 250px; 
+    min-height: 80px; 
+    margin-left: 15px; 
+    float: left;
+    color: #999999;  
+}
+
+.gene_info_external_link_gray { 
+    color : #29166F;
+}
+
+.gene_info_gray a { 
+    text-decoration: none; 
+}
+
+.gene_info_top_gray { 
+    width: 250px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_top_gray.png); 
+}
+
+.gene_info_center_gray { 
+    width: 250px; 
+    min-height: 40px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_center_gray.png); 
+    background-repeat: repeat-y; 
+}	 
+
+.gene_info_bottom_gray { 
+    width: 250px; 
+    height: 20px; 
+    float: left; 
+    background-image: url(../imgs/gene_info_bottom_gray.png); 
+}	
+
+.gene_info_divider_gray {
+    width: 250px;
+    height: 20px;
+    background-image: url(../imgs/gene_info_divider_gray.png);
+}
+
+.gene_info_link_gray {
+    color: #999999;
+}
+
+.gene_info_sublink_gray {
+    color: #999999;
+}
+
+.gene_info_link_clicked_gray {
+    color: #29166F;
+}
+
+.gene_info_sublink_clicked_gray {
+    color: #29166F;
+}
+
+/* tabs */
+.tabs {
+    height: 210px;
+    width: 30px;
+    float: right;
+}
+
+.tab_unselected_dna {
+    height: 70px;
+    width: 30px;
+    background-image: url(../imgs/tab_unselected_dna.png);
+}
+
+.tab_unselected_cdna {
+    height: 70px;
+    width: 30px;
+    background-image: url(../imgs/tab_unselected_cdna.png);
+}
+
+.tab_unselected_other {
+    height: 70px;
+    width: 30px;
+    background-image: url(../imgs/tab_unselected_other.png);
+}
+
+.tab_selected_dna {
+    height: 70px;
+    width: 30px;
+    background-image: url(../imgs/tab_selected_dna.png);
+}
+
+.tab_selected_cdna {
+    height: 70px;
+    width: 30px;
+    background-image: url(../imgs/tab_selected_rna.png);
+}
+
+.tab_selected_other {
+    height: 70px;
+    width: 30px;
+    background-image: url(../imgs/tab_selected_other.png);
+}
+
+.TFpage {
+    float: right;
+    margin-right: 55px;
+    width:300px;
+}
+.mainPageSmall {
+    float: left;
+    margin-left: 55px;
+    width:510px;
+}
+.mainPageBig {
+    float: left;
+    margin-left: 55px;
+    width:810px;
+}
+
+/*
+multi select stiles
+*/
+div.custom-select-box{
+    background-color:#CCC;
+    padding:5px;
+    width:150px;
+    cursor:default;
+    font-family: "arial", sans-serif;
+    font-size:0.8em;
+}
+div.custom-select-box div.custom-unselect{
+    background-color:#FFF;
+    padding:3px;
+    color:gray;
+}
+div.custom-select-box div.custom-select{
+    background-color:#FFF;
+    padding:3px;
+    font-weight:bold;
+    font-size:1.1em;
+}
+
+#mm_outputData *{
+    display:inline;
+}
+
+.sliderBox {
+    padding:8px;
+}
+.sliderBoxBU  * {
+    padding:2px;
+    font-size:15px;
+}
+.sliderBox  .editBox {
+    border:0;
+    font-weight:bold;
+    background: transparent;
+}
+
+.triggerWrap{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.runBtnDiv{
+    padding: 0 20px 5 20px;
+}
+
+.runBtnDiv img{
+    margin-left: 60px;
+}
+.selChanelsDiv{
+    padding: 0 0 0 10px;
+}
+.panelHeader{
+/*    font-size: 1.2em;
+    height: 20px;
+    padding-top: 10px;*/
+    padding: 6px 2px 10px;
+
+}
+.panelTitle{
+    font-size: 1.2em;
+}
+
+.headerMain a{
+    padding: 5px;
+}
+.load_data_container{
+    width: 220px;
+}
+.load_data{
+    padding: 10px;
+    margin-left: 20px;
+}
+.ConfPanel-content{
+    padding: 20px;
+}
+#UploadFilesBtnDiv{
+    padding-top: 60px;
+}
+#loadDataFrom>input, #loadDataFrom>a,#loadDataFrom>embed {
+    margin: 5px;
+}
+/*#loadDataFrom span{ 
+    font-size: 1.2em;
+} */
+#loadDataFrom{
+    margin-left: 20px;
+}
+#settings{
+    padding: 10px;
+    position: relative;
+}
+.dataSourceSpan{
+    margin-left: 20px;
+    color: #CB842E;
+}
+.fieldSet{
+    border: 1px dashed #CB842E;
+    color: #CB842E; 
+    margin: 10px 0;
+    margin-top: 10px 0;
+}
+.dataSource{
+    padding: 20px 20px 0;
+    position:absolute;
+    bottom:5px;
+}
+#loading img{
+margin : 0 180px 40px;
+}
+.message{
+    width:400px;
+    margin:0 auto;    
+}
+.message p{
+    padding:20px;    
+}
+#mainPanel{
+    width: 70%;
+    float: right;
+
+}
+
+#runBtn{
+    font-size: 1.2em;
+}
+
+.welcomeItem{
+    padding: 30px;
+    font-size: 1.3em;       
+}
+.PlotPanel-content > select {
+    margin: 2px 20px;
+    width: 50%;
+}
+.PlotPanel-content > #redrawMMplot {
+    margin: 5px auto 5px 50px;
+}
+
+.PlotPanel-content > img {
+    margin: 10px 80px;
+}
+
+.PlotPanel-content {
+    padding: 0px;
+}
+
+.output_graph{
+    width: 100%;
+}
+.output-content{
+    padding: 10px 30px;
+}
+#loadDataFrom{
+    max-width: 150px;
+}
+label.tTip span{
+    color: black;
+}
+.exportData {
+    float: right;
+    font-size: 0.8em;
+}
+.panelHeader sup{
+    color: yellow;
+}
+.releaseNote{
+    color: yellow;
+    float: right;
+}
+#load_data .spinner{
+    margin-left: 75px;
+}
+#add2DplotsBtn{
+    margin: 0 0 0 25px;
+}
+#editHeatMapSettingsBtn{
+    margin: 0 0 0 25px;
+}
+#add2Dplots{
+    margin: 20px 0 10px 25px;
+}
+#editHeatMapSettingsBtn{
+    margin: 15px 0 10px 15px;
+}
+#replotHeatmapBtn{
+    margin: 0px 0 10px 10px;
+}
+#heatmapImage img{
+    width: 100%
+}
+.output_graph img{
+    width: 100%
+}
+#heatMapSettings, #plotControl{
+    background: #E8E8E8;
+}
+#addScatterPlotBtn{
+     margin: 5px 3px 10 40px;
+}
+.my_header{
+    padding: 0px 0 5 0px;
+}

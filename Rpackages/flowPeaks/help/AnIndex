@@ -1,0 +1,11 @@
+adjust.flowPeaks	adjust.flowPeaks
+assign.flowPeaks	assign.flowPeaks
+barcode	barcode
+barcode.cid	barcode
+concave	concave
+concave.cid	concave
+evalCluster	evalCluster
+flowPeaks	flowPeaks
+plot.flowPeaks	plot.flowPeaks
+print.flowPeaks	print.flowPeaks
+summary.flowPeaks	summary.flowPeaks

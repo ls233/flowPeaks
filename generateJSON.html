@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js1/jquery.json-2.2.min.js"></script>        
+
+        <script>
+            $(document).ready(function () {
+
+                var obj = {
+                    input:{
+                        mode: "init",
+                        data:{
+                            filename: "barcode.txt",
+                            filedir: "ex_in",
+                            fields: [1, 2, 3]                            
+                        },
+                        output:{
+                            dir: "ex_out"                            
+                        },
+                        dims:{
+                            x: 1,
+                            y: 3
+                        },
+                        params:{
+                            tol: 0.1,
+                            h0: 1,
+                            h: 1.5
+                        },
+                        refinement:{
+                            fpfile: "fpfile.fp"                            
+                        }
+                    }
+                };
+                var encoded = $.toJSON(obj); 
+                console.log(encoded);
+                
+                var jsonp_url = "http://clip.med.yale.edu/flowPeaks/runflow_Peaks.php";
+                $.getJSON(jsonp_url, {
+                    jsonString: encoded,
+                    rand:Math.random()
+                }, function(data) {                   
+                    console.log(data);
+                });        
+
+                
+            });
+        </script>
+
+    </head>
+    <body>
+
+    </body>
+</html>

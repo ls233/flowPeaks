@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Doing the flowPeaks analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for flowPeaks {flowPeaks}"><tr><td>flowPeaks {flowPeaks}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Doing the flowPeaks analysis</h2>
+
+<h3>Description</h3>
+
+<p>This is the core function in the flowPeaks package. It
+generates the output of the cluster and information associated with
+each cluster, which can be used by the function <code>plot</code> for
+visualization</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+flowPeaks(x,tol=0.1,h0=1,h=1.5)
+</pre>
+
+
+<h3>Arguments</h3>
+
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+
+<p>a data matrix for the flow cytometry data, it needs to have
+at least two rows, and the names for each column should be unique.
+For a flowFrame data, its exprssion matrix slot
+should be used as x, where only channles of interest are selected
+(see the example below).
+</p>
+</td></tr>
+<tr valign="top"><td><code>tol</code></td>
+<td>
+<p>The tolerance (between 0 and 1) when neighboring clusters
+should be considered to be merged</p>
+</td></tr>
+<tr valign="top"><td><code>h0</code></td>
+<td>
+<p>The multiplier of the vaiarance matrix S0</p>
+</td></tr>
+<tr valign="top"><td><code>h</code></td>
+<td>
+<p>The multiplier of the variance matrix S</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+
+<p>It returns an object of class flowPeaks, which is a list of the
+following variables:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>peaks.cluster</code></td>
+<td>
+<p>An integer shows the cluster labels (between 1 and K
+for K clusters) for each cell. The clustering is based on the
+flowPeaks algorithm</p>
+</td></tr>
+<tr valign="top"><td><code>peaks</code></td>
+<td>
+<p>A summary of the cluster information. It is a list
+with the following three variables:</p>
+
+<ul>
+<li><p> cid: cluster labels, should always be 1:K;
+</p>
+</li>
+<li><p> w: the weights of the K clusters;
+</p>
+</li>
+<li><p> mu: The mean of all cells in the K clusters;
+</p>
+</li>
+<li><p> S: The variance matrix of the K clusters. Note that each variance
+matrix for each cluster has been stacked as a column vector</p>
+</li></ul>
+
+</td></tr>
+<tr valign="top"><td><code>kmeans.cluster</code></td>
+<td>
+<p>An integer shows the cluster labels for the initial
+kmeans clustering</p>
+</td></tr>
+<tr valign="top"><td><code>kmeans</code></td>
+<td>
+<p>A summary of the initial kmeans clustering. The meaning
+of the variables can be seens in the description of peaks above
+</p>
+</td></tr>
+<tr valign="top"><td><code>info</code></td>
+<td>
+<p>The information that can be used for plot, and how the
+initial kmeans clustering and the final flowPeaks clustering are
+connected
+</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The input data x</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+
+<p>Yongchao Ge <a href="mailto:yongchao.ge@gmail.com">yongchao.ge@gmail.com</a>
+</p>
+
+
+<h3>References</h3>
+
+
+<p>Ge Y. et al, flowPeaks: a fast unsupervised clustering for flow
+cytometry data via K-means and density peak finding, 2012, Bioinformatics, in press.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="plot.flowPeaks.html">plot.flowPeaks</a></code></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+##demonstrate how to use a flowFrame
+## Not run: 
+require(flowCore)
+samp &lt;- read.FCS(system.file("extdata","0877408774.B08",
+package="flowCore"))
+##do the clustering based on the asinh transforamtion of
+##the first two FL channels
+fp&lt;-flowPeaks(asinh(samp@exprs[,3:4]))
+plot(fp)
+
+## End(Not run)
+
+data(barcode)
+fp&lt;-flowPeaks(barcode[,c(1,3)])
+plot(fp)
+
+##to compare it with the gold standard
+evalCluster(barcode.cid,fp$peaks.cluster,method="Vmeasure")
+
+#to remove the outliers
+fpc&lt;-assign.flowPeaks(fp,fp$x)
+plot(fp,classlab=fpc,drawboundary=FALSE,
+  drawvor=FALSE,drawkmeans=FALSE,drawlab=TRUE)
+
+
+#to adjust the cluster by increasing the tol,h0, h, which results
+#in a smaller number of clusters
+fp2&lt;-adjust.flowPeaks(fp,tol=0.5,h0=2,h=2) 
+summary(fp2)
+print(fp) #an alternative of using summary(fp) 
+</pre>
+
+<hr><div align="center">[Package <em>flowPeaks</em> version 0.99.6 <a href="00Index.html">Index</a>]</div>
+</body></html>
